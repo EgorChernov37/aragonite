@@ -9,13 +9,10 @@ except Exception as e:
 	print(e)
 try:
 	import sys
-	sys.path.insert(1, '/modcenter')
-	import mc
 except Exception as e:
 	print(e)
 import string
 import math
-mc.modcenter.lib()
 #######################################
 # CONSTANTS
 #######################################
