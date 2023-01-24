@@ -1,14 +1,12 @@
 import os
 try:
-	import basic
+	import a
 except Expection as e:
 	print(e)
-print('x0: Everything alright.')
-basic.run('<stdin>', 'run("classes.sh6c")')
 while True:
 	text = input('shell > ')
 	if text.strip() == "": continue
-	result, error = basic.run('<stdin>', text)
+	result, error = a.run('<stdin>', text)
 
 	if error:
 		print(error.as_string())
