@@ -10,4 +10,4 @@ That's language made by me that is got idea from basic language.
 # Windows
 - Download Python installer at official [website](https://python.org/)
 - Install Python
-[github_tutorial_windows](https://user-images.githubusercontent.com/51438050/222249240-2531c553-d600-4d71-b8c3-c64a601d3b23.png)
+[<img width="400" alt="github_tutorial_windows.png" src="con/img/github_tutorial_windows.png">](con/img/github_tutorial_windows.png)
