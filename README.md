@@ -1,13 +1,14 @@
-## Interpreted language
+# Interpreted language
 That's language made by me that is got idea from basic language.
 (C) Egor Chernov. All rights reversed.
-# How to use?
-# UNIX
+## How to use?
+### UNIX
 - Open terminal using <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>T</kbd> and type in prompt
     ```sh
     python3 shell.py
     ```
-# Windows
+### Windows
+#### Python installation
 - Download Python installer at official [website](https://python.org/)
 - Install Python with that tutorial
 
@@ -18,6 +19,7 @@ That's language made by me that is got idea from basic language.
 [<img width="350" alt="github_tutorial_windows3.png" src="con/img/github_tutorial_windows3.png">](con/img/github_tutorial_windows3.png)
 
 [<img width="350" alt="github_tutorial_windows4.png" src="con/img/github_tutorial_windows4.png">](con/img/github_tutorial_windows4.png)
+#### Run sh6
 - Press <kbd>Win</kbd> <kbd>R</kbd>
 - Type "cmd"
 - Press <kbd>Enter</kbd>
