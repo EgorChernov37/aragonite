@@ -18,3 +18,12 @@ That's language made by me that is got idea from basic language.
 [<img width="350" alt="github_tutorial_windows3.png" src="con/img/github_tutorial_windows3.png">](con/img/github_tutorial_windows3.png)
 
 [<img width="350" alt="github_tutorial_windows4.png" src="con/img/github_tutorial_windows4.png">](con/img/github_tutorial_windows4.png)
+- Press <kbd>Win</kbd> <kbd>R</kbd>
+- Type "cmd"
+- Press <kbd>Enter</kbd>
+- Go into directory of sh6
+- Type in command prompt 
+    ```bat
+    python shell.py
+    ```
+- + shit
