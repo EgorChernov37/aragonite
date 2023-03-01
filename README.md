@@ -24,7 +24,7 @@ That programming language was published as **public** at 03/01/2023. This is int
 - Press <kbd>Win</kbd> <kbd>R</kbd>
 - Type "cmd"
 - Press <kbd>Enter</kbd>
-- [Go to directory](https://en.wikipedia.org/wiki/Cd_(command)) of Downloads and [unzip](https://rastsound.com/openning-your-split-zip-files-in-windows-and-mac/#:~:text=for%20windows) your downloaded source code of sh6
+- [Go to directory](https://en.wikipedia.org/wiki/Cd_(command)#DOS,_OS/2,_Windows,_ReactOS) of Downloads and [unzip](https://rastsound.com/openning-your-split-zip-files-in-windows-and-mac/#:~:text=for%20windows) your downloaded source code of sh6
 - Type in command prompt 
     ```bat
     python shell.py
