@@ -24,7 +24,7 @@ That programming language was published as **public** at 03/01/2023. This is int
 - Press <kbd>Win</kbd> <kbd>R</kbd>
 - Type "cmd"
 - Press <kbd>Enter</kbd>
-- Go into directory of sh6
+- [Go to directory of Downloads](https://en.wikipedia.org/wiki/Cd_(command)) and unzip your downloaded source code of sh6
 - Type in command prompt 
     ```bat
     python shell.py
