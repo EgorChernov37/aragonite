@@ -9,5 +9,5 @@ That's language made by me that is got idea from basic language.
     ```
 # Windows
 - Download Python installer at official [website]
-(https://python.org/):
+    (https://python.org/):
 - Install Python
