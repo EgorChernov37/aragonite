@@ -31,4 +31,5 @@ That programming language was published as **public** at 03/01/2023. This is int
     ```
 ## Questions nobody ask
 Q: Is this software proprietary?
+
 A: No, It's free to use and to change! :)
