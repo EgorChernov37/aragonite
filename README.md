@@ -3,7 +3,7 @@ That programming language was published as **public** at 03/01/2023. This is int
 
 (C) Egor Chernov. All rights reversed.
 ## How to use?
-### UNIX
+### Linux
 - Open terminal using <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>T</kbd> and type in prompt
     ```sh
     python3 shell.py
