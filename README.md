@@ -26,4 +26,4 @@ That's language made by me that is got idea from basic language.
     ```bat
     python shell.py
     ```
-- + shit
++ text
