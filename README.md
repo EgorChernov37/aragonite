@@ -20,6 +20,12 @@ That programming language was published as **public** at 03/01/2023. This is int
 [<img width="350" alt="github_tutorial_windows3.png" src="con/img/github_tutorial_windows3.png">](con/img/github_tutorial_windows3.png)
 
 [<img width="350" alt="github_tutorial_windows4.png" src="con/img/github_tutorial_windows4.png">](con/img/github_tutorial_windows4.png)
+#### Install sh6
+- Install [git](https://git-scm.com/) or [Github Desktop](https://desktop.github.com/)
+- Run this command in command prompt.
+    ```bat
+    git clone https://github.com/EgorChernov37/sh6.git
+    ```
 #### Run sh6
 - Press <kbd>Win</kbd> <kbd>R</kbd>
 - Type "cmd"
