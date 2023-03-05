@@ -4,10 +4,33 @@ That programming language was published as **public** at 03/01/2023. This is int
 (C) Egor Chernov. All rights reversed.
 ## How to use?
 ### Linux
-- Open terminal using <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>T</kbd> and type in prompt
+- Open terminal using <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>T</kbd> and type in prompt:
+    `Ubuntu:`
+    ```sh
+    sudo apt-get install git
+    git clone https://github.com/EgorChernov37/sh6.git
+    ```
+    `Fedora:`
+    ```sh
+    sudo dnf install git
+    git clone https://github.com/EgorChernov37/sh6.git
+    ```
+    `Arch:`
+    ```sh
+    sudo pacman -S git
+    git clone https://github.com/EgorChernov37/sh6.git
+    ```
+    `Redhat:`
+    ```sh
+    sudo yum install git
+    git clone https://github.com/EgorChernov37/sh6.git
+    ```
+- Go to directory of sh6
+- Type in prompt
     ```sh
     python3 shell.py
     ```
+- Shell should appear and you able to write commands in it.
 ### Windows
 #### Python installation
 - Download Python installer at official [website](https://python.org/)
