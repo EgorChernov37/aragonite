@@ -11,7 +11,7 @@ That programming language was published as **public** at 03/01/2023. This is int
 ### Windows
 #### Python installation
 - Download Python installer at official [website](https://python.org/)
-- Install Python with that tutorial
+- Install Python following this tutorial
 
 [<img width="350" alt="github_tutorial_windows.png" src="con/img/github_tutorial_windows.png">](con/img/github_tutorial_windows.png)
 
@@ -22,10 +22,15 @@ That programming language was published as **public** at 03/01/2023. This is int
 [<img width="350" alt="github_tutorial_windows4.png" src="con/img/github_tutorial_windows4.png">](con/img/github_tutorial_windows4.png)
 #### Install sh6
 - Install [git](https://git-scm.com/) or [Github Desktop](https://desktop.github.com/)
+##### Git
 - Run this command in command prompt.
     ```bat
     git clone https://github.com/EgorChernov37/sh6.git
     ```
+- Folder `sh6` should appear in current directory. Open it, try to run `shell.py` it must run and give you a shell.
+##### Github Desktop
+- Press <kbd>Win</kbd> and type `Github Desktop`
+[image](https://user-images.githubusercontent.com/51438050/222961771-b565f1ef-6e23-4103-af0a-da20f502d49e.png)
 #### Run sh6
 - Press <kbd>Win</kbd> <kbd>R</kbd>
 - Type "cmd"
