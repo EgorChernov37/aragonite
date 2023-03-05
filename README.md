@@ -5,6 +5,7 @@ That programming language was published as **public** at 03/01/2023. This is int
 ## How to use?
 ### Linux
 - Open terminal using <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>T</kbd> and type in prompt:
+    
     `Ubuntu:`
     ```sh
     sudo apt-get install git
