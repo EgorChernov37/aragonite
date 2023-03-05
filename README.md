@@ -59,7 +59,7 @@ That programming language was published as **public** at 03/01/2023. This is int
 - Folder `sh6` should appear in current directory. Open it, try to run `shell.py` it must run and give you a shell.
 ##### Github Desktop
 - Press <kbd>Win</kbd> and type `Github Desktop`
-[image](https://user-images.githubusercontent.com/51438050/222961771-b565f1ef-6e23-4103-af0a-da20f502d49e.png)
+![image](https://user-images.githubusercontent.com/51438050/222961771-b565f1ef-6e23-4103-af0a-da20f502d49e.png)
 ##### Github
 - Go to [download link](https://github.com/EgorChernov37/sh6/archive/refs/heads/main.zip)
 - [Unzip](https://rastsound.com/openning-your-split-zip-files-in-windows-and-mac/#:~:text=for%20windows) that file. Open folder with files, try to run `shell.py` it must run and give you a shell.
