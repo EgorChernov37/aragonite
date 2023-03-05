@@ -59,6 +59,7 @@ That programming language was published as **public** at 03/01/2023. This is int
 - Folder `sh6` should appear in current directory. Open it, try to run `shell.py` it must run and give you a shell.
 ##### Github Desktop
 - Press <kbd>Win</kbd> and type `Github Desktop`
+
 [<img width="350" alt="github_tutorial_windows5.png" src="con/img/github_tutorial_windows5.png">](con/img/github_tutorial_windows5.png)
 [<img width="350" alt="github_tutorial_windows6.png" src="con/img/github_tutorial_windows6.png">](con/img/github_tutorial_windows6.png)
 [<img width="350" alt="github_tutorial_windows7.png" src="con/img/github_tutorial_windows7.png">](con/img/github_tutorial_windows7.png)
