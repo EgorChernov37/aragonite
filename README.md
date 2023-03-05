@@ -11,6 +11,11 @@ That programming language was published as **public** at 03/01/2023. This is int
     sudo apt-get install git
     git clone https://github.com/EgorChernov37/sh6.git
     ```
+    OR
+    ```sh
+    sudo apt install git
+    git clone https://github.com/EgorChernov37/sh6.git
+    ```
     `Fedora:`
     ```sh
     sudo dnf install git
