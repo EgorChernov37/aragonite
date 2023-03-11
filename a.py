@@ -2,6 +2,14 @@
 # IMPORTS
 #######################################
 try:
+	import shlex
+except Exception as e:
+	print(e)
+try:
+  import subprocess
+except Exception as e:
+	print(e)
+try:
 	from swa import *
 except Exception as e:
 	print(e)
@@ -1699,7 +1707,10 @@ class BuiltInFunction(BaseFunction):
   execute_print.arg_names = ['value']
   def execute_sys(self, exec_ctx):
     text = (str(exec_ctx.symbol_table.get('value')))
-    os.system(text)
+    try:
+      subprocess.run(shlex.split(text))
+    except Exception as e:
+      print(e)
     return RTResult().success(Number.null)
   execute_sys.arg_names = ["value"]
 
