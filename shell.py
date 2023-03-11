@@ -1,10 +1,13 @@
 import os
 try:
 	import a
-except Expection as e:
+except Exception as e:
 	print(e)
 while True:
-	text = input('shell > ')
+	try:
+		text = input('shell > ')
+	except KeyboardInterrupt:
+		print("\nTo exit shell type 'exit()'")
 	if text.strip() == "": continue
 	result, error = a.run('<stdin>', text)
 
