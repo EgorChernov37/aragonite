@@ -42,13 +42,13 @@ That programming language was published as **public** at 03/01/2023. This is int
 - Download Python installer at official [website](https://python.org/)
 - Install Python following this tutorial
 
-[<img width="350" alt="github_tutorial_windows.png" src="con/img/github_tutorial_windows.png">](con/img/github_tutorial_windows.png)
+[<img width="350" alt="github_tutorial_windows.png" src="img/github_tutorial_windows.png">](img/github_tutorial_windows.png)
 
-[<img width="350" alt="github_tutorial_windows2.png" src="con/img/github_tutorial_windows2.png">](con/img/github_tutorial_windows2.png)
+[<img width="350" alt="github_tutorial_windows2.png" src="img/github_tutorial_windows2.png">](img/github_tutorial_windows2.png)
 
-[<img width="350" alt="github_tutorial_windows3.png" src="con/img/github_tutorial_windows3.png">](con/img/github_tutorial_windows3.png)
+[<img width="350" alt="github_tutorial_windows3.png" src="img/github_tutorial_windows3.png">](img/github_tutorial_windows3.png)
 
-[<img width="350" alt="github_tutorial_windows4.png" src="con/img/github_tutorial_windows4.png">](con/img/github_tutorial_windows4.png)
+[<img width="350" alt="github_tutorial_windows4.png" src="img/github_tutorial_windows4.png">](img/github_tutorial_windows4.png)
 #### Install sh6
 - Install [git](https://git-scm.com/) or [Github Desktop](https://desktop.github.com/)
 ##### Git
@@ -60,12 +60,12 @@ That programming language was published as **public** at 03/01/2023. This is int
 ##### Github Desktop
 - Press <kbd>Win</kbd> and type `Github Desktop`
 
-[<img width="350" alt="github_tutorial_windows5.png" src="con/img/github_tutorial_windows5.png">](con/img/github_tutorial_windows5.png)
-[<img width="350" alt="github_tutorial_windows6.png" src="con/img/github_tutorial_windows6.png">](con/img/github_tutorial_windows6.png)
-[<img width="350" alt="github_tutorial_windows7.png" src="con/img/github_tutorial_windows7.png">](con/img/github_tutorial_windows7.png)
-[<img width="350" alt="github_tutorial_windows8.png" src="con/img/github_tutorial_windows8.png">](con/img/github_tutorial_windows8.png)
-[<img width="350" alt="github_tutorial_windows9.png" src="con/img/github_tutorial_windows9.png">](con/img/github_tutorial_windows9.png)
-[<img width="350" alt="github_tutorial_windows10.png" src="con/img/github_tutorial_windows10.png">](con/img/github_tutorial_windows10.png)
+[<img width="350" alt="github_tutorial_windows5.png" src="img/github_tutorial_windows5.png">](github_tutorial_windows5.png)
+[<img width="350" alt="github_tutorial_windows6.png" src="img/github_tutorial_windows6.png">](img/github_tutorial_windows6.png)
+[<img width="350" alt="github_tutorial_windows7.png" src="img/github_tutorial_windows7.png">](img/github_tutorial_windows7.png)
+[<img width="350" alt="github_tutorial_windows8.png" src="img/github_tutorial_windows8.png">](img/github_tutorial_windows8.png)
+[<img width="350" alt="github_tutorial_windows9.png" src="img/github_tutorial_windows9.png">](img/github_tutorial_windows9.png)
+[<img width="350" alt="github_tutorial_windows10.png" src="img/github_tutorial_windows10.png">](img/github_tutorial_windows10.png)
 ##### Github
 - Go to [download link](https://github.com/EgorChernov37/sh6/archive/refs/heads/main.zip)
 - [Unzip](https://rastsound.com/openning-your-split-zip-files-in-windows-and-mac/#:~:text=for%20windows) that file. Open folder with files, try to run `shell.py` it must run and give you a shell.
