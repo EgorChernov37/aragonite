@@ -6,6 +6,14 @@ try:
 except Exception as e:
 	print(e)
 try:
+	from reader import version
+except Exception:
+	print("[ERROR] Reader can't be imported into program.")
+try:
+  from termcolor import colored, cprint
+except Exception as e:
+	print(e)
+try:
   import subprocess
 except Exception as e:
 	print(e)
@@ -151,6 +159,7 @@ KEYWORDS = [
   'end',
   'return',
   'continue',
+  'version',
   'break',
 ]
 
@@ -638,6 +647,15 @@ class Parser:
       return res.success(ReturnNode(expr, pos_start, self.current_tok.pos_start.copy()))
     
     if self.current_tok.matches(TT_KEYWORD, 'continue'):
+      res.register_advancement()
+      self.advance()
+      return res.success(ContinueNode(pos_start, self.current_tok.pos_start.copy()))
+    if self.current_tok.matches(TT_KEYWORD, 'version'):
+      import requests
+      link = "https://raw.githubusercontent.com/EgorChernov37/proplus6/main/version"
+      f = requests.get(link)
+      print(f"Version: proplus6:{version}", end="; ")
+      cprint(f"Version of current github commit is {f.text.split()}.", "red", "on_white")
       res.register_advancement()
       self.advance()
       return res.success(ContinueNode(pos_start, self.current_tok.pos_start.copy()))
