@@ -651,11 +651,14 @@ class Parser:
       self.advance()
       return res.success(ContinueNode(pos_start, self.current_tok.pos_start.copy()))
     if self.current_tok.matches(TT_KEYWORD, 'version'):
-      import requests
-      link = "https://raw.githubusercontent.com/EgorChernov37/proplus6/main/version"
-      f = requests.get(link)
-      print(f"Version: proplus6:{version}", end="; ")
-      cprint(f"Version of current github commit is {f.text.split()}.", "red", "on_white")
+      try:
+        import requests
+        link = "https://raw.githubusercontent.com/EgorChernov37/proplus6/main/version"
+        f = requests.get(link)
+        print(f"Version: {version}", end="; ")
+        cprint(f"version of current github commit is {f.text.join(f.text.split())}.", "red", "on_white")
+      except Exception:
+        print("[ERROR] Uh, oh! Looks like you've broken version file. Download it at https://github.com/EgorChernov37/proplus6/")
       res.register_advancement()
       self.advance()
       return res.success(ContinueNode(pos_start, self.current_tok.pos_start.copy()))
