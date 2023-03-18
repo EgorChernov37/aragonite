@@ -1758,7 +1758,6 @@ class BuiltInFunction(BaseFunction):
 
   def execute_exit(self, exec_ctx):
     sys.exit(0)
-    return RTResult().success(Number.null)
   execute_exit.arg_names = []
   
   def execute_print_ret(self, exec_ctx):
@@ -1766,21 +1765,28 @@ class BuiltInFunction(BaseFunction):
   execute_print_ret.arg_names = ['value']
   
   def execute_input(self, exec_ctx):
-    texe = (str(exec_ctx.symbol_table.get('value')))
-    text = input(texe)
+    try:
+      out = (str(exec_ctx.symbol_table.get('value')))
+      text = input(out)
+    except EOFError: quit()
+    except KeyboardInterrupt: text=f"{Number.null}"; pass
     return RTResult().success(String(text))
   execute_input.arg_names = ['value']
 
   def execute_input_int(self, exec_ctx):
-    while True:
-      text = input()
-      try:
-        number = int(text)
-        break
-      except ValueError:
-        print(f"'{text}' must be an integer. Try again!")
+    try:
+      out = (str(exec_ctx.symbol_table.get('value')))
+      while True:
+        text = input(out)
+        try:
+          number = int(text)
+          break
+        except ValueError:
+          print(f"'{text}' must be an integer. Try again!")
+    except EOFError: quit()
+    except KeyboardInterrupt: number=f"{Number.null}"; pass
     return RTResult().success(Number(number))
-  execute_input_int.arg_names = []
+  execute_input_int.arg_names = ['value']
 
   def execute_clear(self, exec_ctx):
     os.system('cls' if os.name == 'nt' else 'cls') 
