@@ -1,22 +1,14 @@
-try:
-	from reader import version
-except Exception: pass
-#import readline
+import os
+
 try:
 	import a
 except Exception as e:
 	print(e)
 while True:
 	try:
-		if 'version' in locals():
-			text = input(f'proplus6:{version} > ')
-		else:
-			text = input(f'proplus6 > ')
+		text = input('shell > ')
 	except KeyboardInterrupt:
 		print("\nTo exit shell type 'exit()'")
-		continue
-	except EOFError:
-		break
 	if text.strip() == "": continue
 	result, error = a.run('<stdin>', text)
 
@@ -27,4 +19,4 @@ while True:
 			print(repr(result.elements[0]))
 		else:
 			print(repr(result))
-		print(repr(result))
+			print(repr(result))
