@@ -2288,4 +2288,5 @@ def run(fn, text):
 def install(text):
   import requests
   module = requests.get("https://raw.githubusercontent.com/EgorChernov37/proplus6m/main/" + text)
-  open("helloworld.psixm", "wb").write(module.content)
+  global filename; filename = input("What you want to be module named? ")
+  open(filename, "wb").write(module.content)
