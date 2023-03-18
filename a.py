@@ -1,6 +1,7 @@
 #######################################
 # IMPORTS
 #######################################
+colors = True
 try:
 	import shlex
 except Exception as e:
@@ -8,11 +9,11 @@ except Exception as e:
 try:
 	from reader import version
 except Exception:
-	print("[ERROR] Reader can't be imported into program.")
+	print("[ERROR] Reader can't be imported into program. Install it in https://github.com/EgorChernov37/proplus6.")
 try:
   from termcolor import colored, cprint
-except Exception as e:
-	print(e)
+except Exception:
+	print("No module named 'termcolor'. Try to install it with 'pip install termcolor'"); colors = False
 try:
   import subprocess
 except Exception as e:
@@ -651,19 +652,34 @@ class Parser:
       self.advance()
       return res.success(ContinueNode(pos_start, self.current_tok.pos_start.copy()))
     if self.current_tok.matches(TT_KEYWORD, 'version'):
-      try:
-        import requests
-        link = "https://raw.githubusercontent.com/EgorChernov37/proplus6/main/version"
-        f = requests.get(link)
-        print(f"Version: {version}", end="; ")
-        cprint(f"version of current github commit is {f.text.join(f.text.split())}.", "red", "on_white")
-      except Exception:
-        cprint("[ERROR]", "red", end=" ")
-        print("""Possible reasons:
-        - you've broken version file. Download it at https://github.com/EgorChernov37/proplus6/
-        - you don't have internet connection
-        - you don't have installed requests module in python
-        - requests are shid :(""")
+      if colors == True:
+        try:
+          import requests
+          link = "https://raw.githubusercontent.com/EgorChernov37/proplus6/main/version"
+          f = requests.get(link)
+          print(f"Version: {version}", end="; ")
+          cprint(f"version of current github commit is {f.text.join(f.text.split())}.", "red", "on_white")
+        except Exception:
+          cprint("[ERROR]", "red", end=" ")
+          print("""Possible reasons:
+          - you've broken version file. Download it at https://github.com/EgorChernov37/proplus6/
+          - you don't have internet connection
+          - you don't have installed requests module in python
+          - requests are shid :(""")
+      else:
+          try:
+            import requests
+            link = "https://raw.githubusercontent.com/EgorChernov37/proplus6/main/version"
+            f = requests.get(link)
+            print(f"Version: {version}", end="; ")
+            print(f"version of current github commit is {f.text.join(f.text.split())}.")
+          except Exception:
+            print("[ERROR]", end=" ")
+            print("""Possible reasons:
+            - you've broken version file. Download it at https://github.com/EgorChernov37/proplus6/
+            - you don't have internet connection
+            - you don't have installed requests module in python
+            - requests are shid :(""")
       res.register_advancement()
       self.advance()
       return res.success(ContinueNode(pos_start, self.current_tok.pos_start.copy()))

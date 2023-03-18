@@ -1,7 +1,7 @@
 try:
 	from reader import version
 except Exception: pass
-import readline
+#import readline
 try:
 	import a
 except Exception as e:
