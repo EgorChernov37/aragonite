@@ -230,7 +230,6 @@ class Lexer:
         self.advance()
       elif self.current_char == '^':
         tokens.append(Token(TT_POW, pos_start=self.pos))
-        self.advance()
       elif self.current_char == '(':
         tokens.append(Token(TT_LPAREN, pos_start=self.pos))
         self.advance()
@@ -1815,9 +1814,12 @@ class BuiltInFunction(BaseFunction):
 
 
   def execute_install(self, exec_ctx):
-    print('Installation of packages currently closed due it\'s abuse.')
+    text = (str(exec_ctx.symbol_table.get('value')))
+    import requests
+    module = requests.get("https://raw.githubusercontent.com/EgorChernov37/proplus6m/main/" + text)
+    open(text, "wb").write(module.content)
     return RTResult().success(Number.null)
-  execute_install.arg_names = []
+  execute_install.arg_names = ["value"]
 
   def execute_append(self, exec_ctx):
     list_ = exec_ctx.symbol_table.get("list")
@@ -1929,7 +1931,6 @@ class BuiltInFunction(BaseFunction):
         error.as_string(),
         exec_ctx
       ))
-
     return RTResult().success(Number.null)
   execute_run.arg_names = ["fn"]
 
@@ -1950,6 +1951,7 @@ BuiltInFunction.len					= BuiltInFunction("len")
 BuiltInFunction.run					= BuiltInFunction("run")
 BuiltInFunction.sys					= BuiltInFunction("sys")
 BuiltInFunction.install			    = BuiltInFunction("install")
+
 
 #######################################
 # CONTEXT
@@ -2283,3 +2285,7 @@ def run(fn, text):
   result = interpreter.visit(ast.node, context)
 
   return result.value, result.error
+def install(text):
+  import requests
+  module = requests.get("https://raw.githubusercontent.com/EgorChernov37/proplus6m/main/" + text)
+  open("helloworld.psixm", "wb").write(module.content)
