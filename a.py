@@ -1809,7 +1809,7 @@ class BuiltInFunction(BaseFunction):
 
 
   def execute_install(self, exec_ctx):
-    print('dantur u sus!')
+    print('Installation of packages currently closed due it\'s abuse.')
     return RTResult().success(Number.null)
   execute_install.arg_names = []
 
