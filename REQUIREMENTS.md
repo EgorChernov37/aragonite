@@ -4,6 +4,10 @@
 	```bash
 	pip3 install term-color
 	```
+- requests
+	```bash
+	pip3 install requests
+	```
 ### Optional
 #### Linux
 - readline
