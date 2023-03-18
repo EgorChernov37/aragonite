@@ -658,7 +658,12 @@ class Parser:
         print(f"Version: {version}", end="; ")
         cprint(f"version of current github commit is {f.text.join(f.text.split())}.", "red", "on_white")
       except Exception:
-        print("[ERROR] Uh, oh! Looks like you've broken version file. Download it at https://github.com/EgorChernov37/proplus6/")
+        cprint("[ERROR]", "red", end=" ")
+        print("""Possible reasons:
+        - you've broken version file. Download it at https://github.com/EgorChernov37/proplus6/
+        - you don't have internet connection
+        - you don't have installed requests module in python
+        - requests are shid :(""")
       res.register_advancement()
       self.advance()
       return res.success(ContinueNode(pos_start, self.current_tok.pos_start.copy()))
