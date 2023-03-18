@@ -14,6 +14,9 @@ while True:
 			text = input(f'proplus6 > ')
 	except KeyboardInterrupt:
 		print("\nTo exit shell type 'exit()'")
+		continue
+	except EOFError:
+		break
 	if text.strip() == "": continue
 	result, error = a.run('<stdin>', text)
 
@@ -24,4 +27,4 @@ while True:
 			print(repr(result.elements[0]))
 		else:
 			print(repr(result))
-			print(repr(result))
+		print(repr(result))
