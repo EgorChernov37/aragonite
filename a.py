@@ -1820,6 +1820,18 @@ class BuiltInFunction(BaseFunction):
     open(text, "wb").write(module.content)
     return RTResult().success(Number.null)
   execute_install.arg_names = ["value"]
+  def execute_capitalize(self, exec_ctx):
+    text = (str(exec_ctx.symbol_table.get('value'))).capitalize()
+    return RTResult().success(String(text))
+  execute_capitalize.arg_names = ["value"]
+  def execute_upper(self, exec_ctx):
+    text = (str(exec_ctx.symbol_table.get('value'))).upper()
+    return RTResult().success(String(text))
+  execute_upper.arg_names = ["value"]
+  def execute_lower(self, exec_ctx):
+    text = (str(exec_ctx.symbol_table.get('value'))).lower()
+    return RTResult().success(String(text))
+  execute_lower.arg_names = ["value"]
 
   def execute_append(self, exec_ctx):
     list_ = exec_ctx.symbol_table.get("list")
@@ -1948,9 +1960,12 @@ BuiltInFunction.append      = BuiltInFunction("append")
 BuiltInFunction.pop         = BuiltInFunction("pop")
 BuiltInFunction.extend      = BuiltInFunction("extend")
 BuiltInFunction.len					= BuiltInFunction("len")
+BuiltInFunction.capitalize  = BuiltInFunction("capitalize")
+BuiltInFunction.upper				= BuiltInFunction("upper")
+BuiltInFunction.lower				= BuiltInFunction("lower")
 BuiltInFunction.run					= BuiltInFunction("run")
 BuiltInFunction.sys					= BuiltInFunction("sys")
-BuiltInFunction.install			    = BuiltInFunction("install")
+BuiltInFunction.install     = BuiltInFunction("install")
 
 
 #######################################
@@ -2262,6 +2277,9 @@ global_symbol_table.set("append", BuiltInFunction.append)
 global_symbol_table.set("pop", BuiltInFunction.pop)
 global_symbol_table.set("extend", BuiltInFunction.extend)
 global_symbol_table.set("len", BuiltInFunction.len)
+global_symbol_table.set("capitalize", BuiltInFunction.capitalize)
+global_symbol_table.set("upper", BuiltInFunction.upper)
+global_symbol_table.set("lower", BuiltInFunction.lower)
 global_symbol_table.set("run", BuiltInFunction.run)
 global_symbol_table.set("exit", BuiltInFunction.exit)
 global_symbol_table.set("sys", BuiltInFunction.sys)
