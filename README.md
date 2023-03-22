@@ -9,27 +9,27 @@ That programming language was published as **public** at 03/01/2023. This is int
     `Ubuntu:`
     ```sh
     sudo apt-get install git
-    git clone https://github.com/EgorChernov37/proplus6.git
+    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r requirements.txt
     ```
     OR
     ```sh
     sudo apt install git
-    git clone https://github.com/EgorChernov37/proplus6.git
+    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r requirements.txt
     ```
     `Fedora:`
     ```sh
     sudo dnf install git
-    git clone https://github.com/EgorChernov37/proplus6.git
+    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r requirements.txt
     ```
     `Arch:`
     ```sh
     sudo pacman -S git
-    git clone https://github.com/EgorChernov37/proplus6.git
+    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r requirements.txt
     ```
     `Redhat:`
     ```sh
     sudo yum install git
-    git clone https://github.com/EgorChernov37/proplus6.git
+    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r requirements.txt
     ```
 - Go to directory of proplus6
 - Type in prompt
