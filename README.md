@@ -54,7 +54,7 @@ That programming language was published as **public** at 03/01/2023. This is int
 ##### Git
 - Run this command in command prompt.
     ```bat
-    git clone https://github.com/EgorChernov37/sh6.git && pip install -r proplus6/requirements.txt
+    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r proplus6/requirements.txt
     ```
 - Folder `sh6` should appear in current directory. Open it, try to run `shell.py` it must run and give you a shell.
 ##### Github Desktop
