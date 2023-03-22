@@ -1,4 +1,4 @@
-# Interpreted language [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE) [(https://img.shields.io/github/downloads/EgorChernov37/proplus6/total)]
+# Interpreted language [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 That programming language was published as **public** at 03/01/2023. This is interpreted programming language which meaning that source code **can run as is**
 
 (C) Egor Chernov. All rights reversed.
