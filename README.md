@@ -1,4 +1,4 @@
-# Interpreted language [![License](https://img.shields.io/github/license/EgorChernov37/proplus6)](/LICENSE) [![Github](https://img.shields.io/github/downloads/EgorChernov37/proplus6/total?logo=github)](README.md) [![Version](https://img.shields.io/badge/version-8.4--stable-blue)](README.md)
+# Interpreted language [![License](https://img.shields.io/github/license/EgorChernov37/aragonite)](/LICENSE) [![Github](https://img.shields.io/github/downloads/EgorChernov37/aragonite/total?logo=github)](README.md) [![Version](https://img.shields.io/badge/version-8.4--stable-blue)](README.md)
 That programming language was published as **public** at 03/01/2023. This is interpreted programming language which meaning that source code **can run as is**
 
 (C) Egor Chernov. All rights reversed.
@@ -9,29 +9,29 @@ That programming language was published as **public** at 03/01/2023. This is int
     `Ubuntu:`
     ```sh
     sudo apt-get install git
-    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r requirements.txt
+    git clone https://github.com/EgorChernov37/aragonite.git && pip install -r requirements.txt
     ```
     OR
     ```sh
     sudo apt install git
-    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r requirements.txt
+    git clone https://github.com/EgorChernov37/aragonite.git && pip install -r requirements.txt
     ```
     `Fedora:`
     ```sh
     sudo dnf install git
-    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r requirements.txt
+    git clone https://github.com/EgorChernov37/aragonite.git && pip install -r requirements.txt
     ```
     `Arch:`
     ```sh
     sudo pacman -S git
-    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r requirements.txt
+    git clone https://github.com/EgorChernov37/aragonite.git && pip install -r requirements.txt
     ```
     `Redhat:`
     ```sh
     sudo yum install git
-    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r requirements.txt
+    git clone https://github.com/EgorChernov37/aragonite.git && pip install -r requirements.txt
     ```
-- Go to directory of proplus6
+- Go to directory of aragonite
 - Type in prompt
     ```sh
     python3 shell.py
@@ -49,14 +49,14 @@ That programming language was published as **public** at 03/01/2023. This is int
 [<img width="350" alt="github_tutorial_windows3.png" src="img/github_tutorial_windows3.png">](img/github_tutorial_windows3.png)
 
 [<img width="350" alt="github_tutorial_windows4.png" src="img/github_tutorial_windows4.png">](img/github_tutorial_windows4.png)
-#### Install proplus6
+#### Install Aragonite
 - Install [git](https://git-scm.com/) or [Github Desktop](https://desktop.github.com/)
 ##### Git
 - Run this command in command prompt.
     ```bat
-    git clone https://github.com/EgorChernov37/proplus6.git && pip install -r proplus6/requirements.txt
+    git clone https://github.com/EgorChernov37/aragonite.git && pip install -r aragonite/requirements.txt
     ```
-- Folder `proplus6` should appear in current directory. Open it, try to run `shell.py` it must run and give you a shell.
+- Folder `aragonite` should appear in current directory. Open it, try to run `shell.py` it must run and give you a shell.
 ##### Github Desktop
 - Press <kbd>Win</kbd> and type `Github Desktop`
 
@@ -67,14 +67,14 @@ That programming language was published as **public** at 03/01/2023. This is int
 [<img width="350" alt="github_tutorial_windows9.png" src="img/github_tutorial_windows9.png">](img/github_tutorial_windows9.png)
 [<img width="350" alt="github_tutorial_windows10.png" src="img/github_tutorial_windows10.png">](img/github_tutorial_windows10.png)
 ##### Github
-- Go to [download link](https://github.com/EgorChernov37/proplus6/archive/refs/heads/main.zip)
+- Go to [download link](https://github.com/EgorChernov37/aragonite/archive/refs/heads/main.zip)
 - [Unzip](https://rastsound.com/openning-your-split-zip-files-in-windows-and-mac/#:~:text=for%20windows) that file. Open folder with files, try to run `shell.py` it must run and give you a shell.
-#### Run proplus6
+#### Run Aragonite
 - Press <kbd>Win</kbd> <kbd>R</kbd>
 - Type "cmd"
 - Press <kbd>Enter</kbd>
-- [Go to directory](https://en.wikipedia.org/wiki/Cd_(command)#DOS,_OS/2,_Windows,_ReactOS) of Downloads and [unzip](https://rastsound.com/openning-your-split-zip-files-in-windows-and-mac/#:~:text=for%20windows) your downloaded source code of proplus6
-- Go to directory of unzipped source code of proplus6
+- [Go to directory](https://en.wikipedia.org/wiki/Cd_(command)#DOS,_OS/2,_Windows,_ReactOS) of Downloads and [unzip](https://rastsound.com/openning-your-split-zip-files-in-windows-and-mac/#:~:text=for%20windows) your downloaded source code of Aragonite
+- Go to directory of unzipped source code of Aragonite
 - Type in command prompt 
     ```bat
     python shell.py
