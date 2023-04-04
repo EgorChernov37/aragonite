@@ -1,11 +1,8 @@
 import a
-global filename
 def main():
 	while True:
 		try:
 			module = input("What module to install? ")
-			global default
-			default = module
 		except KeyboardInterrupt: continue
 		except EOFError: quit()
 		if module == "".split(): continue
@@ -14,7 +11,7 @@ def main():
 	a.run("<stdin>", f"run(\"{a.filename}\")")
 	while True:
 		try:
-			text = input("proplus6:psm > ")
+			text = input("aragonite:argnm > ")
 		except KeyboardInterrupt: print("\nTo exit shell type 'exit()'"); continue
 		except EOFError: break
 		if text.strip() == "": continue

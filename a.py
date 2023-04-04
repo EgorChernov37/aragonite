@@ -2305,7 +2305,7 @@ def run(fn, text):
   return result.value, result.error
 def install(text):
   import requests
-  module = requests.get("https://raw.githubusercontent.com/EgorChernov37/proplus6m/main/stable/" + text)
+  module = requests.get("https://raw.githubusercontent.com/EgorChernov37/argnm/main/stable/" + text)
   global filename
   filename = input("What you want to be module named (press Enter for same name)? ")
   if filename.strip() == "": filename = text
