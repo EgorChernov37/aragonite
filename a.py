@@ -6,10 +6,10 @@ try:
 	import shlex
 except Exception as e:
 	print(e)
-try:
-	from reader import version
-except Exception:
-	print("[ERROR] Reader can't be imported into program. Install it in https://github.com/EgorChernov37/proplus6.")
+#try:
+from reader import ver
+#except Exception:
+#	print("[ERROR] Reader can't be imported into program. Install it in https://github.com/EgorChernov37/proplus6.")
 try:
   from termcolor import colored, cprint
 except Exception:
@@ -2305,6 +2305,8 @@ def run(fn, text):
   return result.value, result.error
 def install(text):
   import requests
-  module = requests.get("https://raw.githubusercontent.com/EgorChernov37/proplus6m/main/" + text)
-  global filename; filename = input("What you want to be module named? ")
+  module = requests.get("https://raw.githubusercontent.com/EgorChernov37/proplus6m/main/stable/" + text)
+  global filename
+  filename = input("What you want to be module named (press Enter for same name)? ")
+  if filename.strip() == "": filename = text
   open(filename, "wb").write(module.content)
