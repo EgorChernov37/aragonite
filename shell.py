@@ -9,9 +9,9 @@ except Exception as e:
 while True:
 	try:
 		if 'version' in locals():
-			text = input(f'proplus6:{version} > ')
+			text = input(f'aragonite:{version} > ')
 		else:
-			text = input(f'proplus6 > ')
+			text = input(f'aragonite > ')
 	except KeyboardInterrupt:
 		print("\nTo exit shell type 'exit()'")
 		continue
