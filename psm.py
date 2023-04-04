@@ -1,8 +1,11 @@
 import a
+global filename
 def main():
 	while True:
 		try:
 			module = input("What module to install? ")
+			global default
+			default = module
 		except KeyboardInterrupt: continue
 		except EOFError: quit()
 		if module == "".split(): continue
