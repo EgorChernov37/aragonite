@@ -1,5 +1,5 @@
 try:
-	from reader import version
+	from reader import ver
 except Exception: pass
 #import readline
 try:
@@ -8,8 +8,8 @@ except Exception as e:
 	print(e)
 while True:
 	try:
-		if 'version' in locals():
-			text = input(f'aragonite:{version} > ')
+		if 'ver' in locals():
+			text = input(f'aragonite:{ver} > ')
 		else:
 			text = input(f'aragonite > ')
 	except KeyboardInterrupt:
