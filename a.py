@@ -682,11 +682,6 @@ class Parser:
       res.register_advancement()
       self.advance()
       return res.success(ContinueNode(pos_start, self.current_tok.pos_start.copy()))
-      
-    if self.current_tok.matches(TT_KEYWORD, 'break'):
-      res.register_advancement()
-      self.advance()
-      return res.success(BreakNode(pos_start, self.current_tok.pos_start.copy()))
 
     expr = res.register(self.expr())
     if res.error:
@@ -1816,7 +1811,7 @@ class BuiltInFunction(BaseFunction):
   def execute_install(self, exec_ctx):
     text = (str(exec_ctx.symbol_table.get('value')))
     import requests
-    module = requests.get("https://raw.githubusercontent.com/EgorChernov37/proplus6m/main/" + text)
+    module = requests.get("https://raw.githubusercontent.com/EgorChernov37/argnm/main/stable/" + text)
     open(text, "wb").write(module.content)
     return RTResult().success(Number.null)
   execute_install.arg_names = ["value"]
@@ -1912,6 +1907,40 @@ class BuiltInFunction(BaseFunction):
     return RTResult().success(Number(len(list_.elements)))
   execute_len.arg_names = ["list"]
 
+  def execute_import(self, exec_ctx):
+    fn = exec_ctx.symbol_table.get("fn")
+
+    if not isinstance(fn, String):
+      return RTResult().failure(RTError(
+        self.pos_start, self.pos_end,
+        "Second argument must be string",
+        exec_ctx
+      ))
+
+    fn = fn.value
+
+    try:
+      with open(fn, "r") as f:
+        script = f.read()
+    except Exception as e:
+      return RTResult().failure(RTError(
+        self.pos_start, self.pos_end,
+        f"Failed to load script \"{fn}\"\n" + str(e),
+        exec_ctx
+      ))
+
+    _, error = run(fn, script)
+    
+    if error:
+      return RTResult().failure(RTError(
+        self.pos_start, self.pos_end,
+        f"Failed to finish executing script \"{fn}\"\n" +
+        error.as_string(),
+        exec_ctx
+      ))
+    return RTResult().success(Number.null)
+  execute_import.arg_names = ["fn"]
+
   def execute_run(self, exec_ctx):
     fn = exec_ctx.symbol_table.get("fn")
 
@@ -1945,7 +1974,7 @@ class BuiltInFunction(BaseFunction):
       ))
     return RTResult().success(Number.null)
   execute_run.arg_names = ["fn"]
-
+implement = "import"
 BuiltInFunction.print       = BuiltInFunction("print")
 BuiltInFunction.exit        = BuiltInFunction("exit")
 BuiltInFunction.print_ret   = BuiltInFunction("print_ret")
@@ -1960,6 +1989,7 @@ BuiltInFunction.append      = BuiltInFunction("append")
 BuiltInFunction.pop         = BuiltInFunction("pop")
 BuiltInFunction.extend      = BuiltInFunction("extend")
 BuiltInFunction.len					= BuiltInFunction("len")
+BuiltInFunction.implement		= BuiltInFunction("import")
 BuiltInFunction.capitalize  = BuiltInFunction("capitalize")
 BuiltInFunction.upper				= BuiltInFunction("upper")
 BuiltInFunction.lower				= BuiltInFunction("lower")
@@ -2281,6 +2311,7 @@ global_symbol_table.set("capitalize", BuiltInFunction.capitalize)
 global_symbol_table.set("upper", BuiltInFunction.upper)
 global_symbol_table.set("lower", BuiltInFunction.lower)
 global_symbol_table.set("run", BuiltInFunction.run)
+global_symbol_table.set("import", BuiltInFunction.implement)
 global_symbol_table.set("exit", BuiltInFunction.exit)
 global_symbol_table.set("sys", BuiltInFunction.sys)
 global_symbol_table.set("install", BuiltInFunction.install)
