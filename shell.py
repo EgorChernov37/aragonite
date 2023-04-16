@@ -1,15 +1,13 @@
-try:
-	from reader import ver
-except Exception: pass
-#import readline
+import readline
 try:
 	import a
+	from a import ver
 except Exception as e:
 	print(e)
 while True:
 	try:
 		if 'ver' in locals():
-			text = input(f'aragonite:{ver} > ')
+			text = input(f'aragonite:{ver["version"]} > ')
 		else:
 			text = input(f'aragonite > ')
 	except KeyboardInterrupt:

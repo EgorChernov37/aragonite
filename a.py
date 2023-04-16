@@ -6,10 +6,7 @@ try:
 	import shlex
 except Exception as e:
 	print(e)
-#try:
-from reader import ver
-#except Exception:
-#	print("[ERROR] Reader can't be imported into program. Install it in https://github.com/EgorChernov37/proplus6.")
+import json
 try:
   from termcolor import colored, cprint
 except Exception:
@@ -28,6 +25,13 @@ except Exception as e:
 	print(e)
 import string
 import math
+#######################################
+# VERSION
+#######################################
+
+with open("version.json") as json_file:
+  global ver; ver = json.load(json_file)
+
 #######################################
 # CONSTANTS
 #######################################
@@ -654,34 +658,48 @@ class Parser:
       if colors == True:
         try:
           import requests
-          link = "https://raw.githubusercontent.com/EgorChernov37/proplus6/main/version"
+          link = "https://raw.githubusercontent.com/EgorChernov37/aragonite/main/version.json"
           f = requests.get(link)
-          print(f"Version: {version}", end="; ")
-          cprint(f"version of current github commit is {f.text.join(f.text.split())}.", "red", "on_white")
+          dict = f.json()
+          dict = json.dumps(dict)
+          github = json.loads(dict)
+          github = github["version"]
+          version = ver["version"]
+          print(f"Version: {version}.")
+          cprint(f"Version of current github commit: {github.join(github.split())}.", "green")
         except Exception:
           cprint("[ERROR]", "red", end=" ")
           print("""Possible reasons:
-          - you've broken version file. Download it at https://github.com/EgorChernov37/proplus6/
+          - you've broken version file. Download it at https://github.com/EgorChernov37/aragonite/
           - you don't have internet connection
           - you don't have installed requests module in python
-          - requests are shid :(""")
+          - requests is bad :(""")
       else:
           try:
             import requests
-            link = "https://raw.githubusercontent.com/EgorChernov37/proplus6/main/version"
+            link = "https://raw.githubusercontent.com/EgorChernov37/aragonite/main/version.json"
             f = requests.get(link)
-            print(f"Version: {version}", end="; ")
-            print(f"version of current github commit is {f.text.join(f.text.split())}.")
+            dict = f.json()
+            dict = json.dumps(dict)
+            github = json.loads(dict)
+            github = github["version"]
+            version = ver["version"]
+            print(f"Version: {version}.")
+            print(f"Version of current github commit: {github.join(github.split())}.")
           except Exception:
-            print("[ERROR]", end=" ")
-            print("""Possible reasons:
-            - you've broken version file. Download it at https://github.com/EgorChernov37/proplus6/
+            print("""[ERROR] Possible reasons:
+            - you've broken version file. Download it at https://github.com/EgorChernov37/aragonite/
             - you don't have internet connection
             - you don't have installed requests module in python
-            - requests are shid :(""")
+            - requests is bad :(""")
       res.register_advancement()
       self.advance()
       return res.success(ContinueNode(pos_start, self.current_tok.pos_start.copy()))
+      
+    if self.current_tok.matches(TT_KEYWORD, 'break'):
+      res.register_advancement()
+      self.advance()
+      return res.success(BreakNode(pos_start, self.current_tok.pos_start.copy()))
 
     expr = res.register(self.expr())
     if res.error:
@@ -1813,6 +1831,7 @@ class BuiltInFunction(BaseFunction):
     import requests
     module = requests.get("https://raw.githubusercontent.com/EgorChernov37/argnm/main/stable/" + text)
     open(text, "wb").write(module.content)
+    run("<stdin>", text)
     return RTResult().success(Number.null)
   execute_install.arg_names = ["value"]
   def execute_capitalize(self, exec_ctx):
@@ -1907,40 +1926,6 @@ class BuiltInFunction(BaseFunction):
     return RTResult().success(Number(len(list_.elements)))
   execute_len.arg_names = ["list"]
 
-  def execute_import(self, exec_ctx):
-    fn = exec_ctx.symbol_table.get("fn")
-
-    if not isinstance(fn, String):
-      return RTResult().failure(RTError(
-        self.pos_start, self.pos_end,
-        "Second argument must be string",
-        exec_ctx
-      ))
-
-    fn = fn.value
-
-    try:
-      with open(fn, "r") as f:
-        script = f.read()
-    except Exception as e:
-      return RTResult().failure(RTError(
-        self.pos_start, self.pos_end,
-        f"Failed to load script \"{fn}\"\n" + str(e),
-        exec_ctx
-      ))
-
-    _, error = run(fn, script)
-    
-    if error:
-      return RTResult().failure(RTError(
-        self.pos_start, self.pos_end,
-        f"Failed to finish executing script \"{fn}\"\n" +
-        error.as_string(),
-        exec_ctx
-      ))
-    return RTResult().success(Number.null)
-  execute_import.arg_names = ["fn"]
-
   def execute_run(self, exec_ctx):
     fn = exec_ctx.symbol_table.get("fn")
 
@@ -1974,7 +1959,7 @@ class BuiltInFunction(BaseFunction):
       ))
     return RTResult().success(Number.null)
   execute_run.arg_names = ["fn"]
-implement = "import"
+
 BuiltInFunction.print       = BuiltInFunction("print")
 BuiltInFunction.exit        = BuiltInFunction("exit")
 BuiltInFunction.print_ret   = BuiltInFunction("print_ret")
@@ -1989,7 +1974,6 @@ BuiltInFunction.append      = BuiltInFunction("append")
 BuiltInFunction.pop         = BuiltInFunction("pop")
 BuiltInFunction.extend      = BuiltInFunction("extend")
 BuiltInFunction.len					= BuiltInFunction("len")
-BuiltInFunction.implement		= BuiltInFunction("import")
 BuiltInFunction.capitalize  = BuiltInFunction("capitalize")
 BuiltInFunction.upper				= BuiltInFunction("upper")
 BuiltInFunction.lower				= BuiltInFunction("lower")
@@ -2311,7 +2295,6 @@ global_symbol_table.set("capitalize", BuiltInFunction.capitalize)
 global_symbol_table.set("upper", BuiltInFunction.upper)
 global_symbol_table.set("lower", BuiltInFunction.lower)
 global_symbol_table.set("run", BuiltInFunction.run)
-global_symbol_table.set("import", BuiltInFunction.implement)
 global_symbol_table.set("exit", BuiltInFunction.exit)
 global_symbol_table.set("sys", BuiltInFunction.sys)
 global_symbol_table.set("install", BuiltInFunction.install)
@@ -2326,7 +2309,6 @@ def run(fn, text):
   parser = Parser(tokens)
   ast = parser.parse()
   if ast.error: return None, ast.error
-
   # Run program
   interpreter = Interpreter()
   context = Context('<program>')
