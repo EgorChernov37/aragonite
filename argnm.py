@@ -1,4 +1,6 @@
 import a
+import readline
+del a.ver
 def main():
 	while True:
 		try:
@@ -8,7 +10,13 @@ def main():
 		if module == "".split(): continue
 		else: break
 	a.install(module)
-	a.run("<stdin>", f"run(\"{a.filename}\")")
+	try:
+		from a import filename
+	except Exception:main()
+	else:
+		if filename in locals():
+			a.run("<stdin>", f"run(\"{filename}\")")
+		else:pass
 	while True:
 		try:
 			text = input("aragonite:argnm > ")

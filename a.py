@@ -1829,9 +1829,18 @@ class BuiltInFunction(BaseFunction):
   def execute_install(self, exec_ctx):
     text = (str(exec_ctx.symbol_table.get('value')))
     import requests
-    module = requests.get("https://raw.githubusercontent.com/EgorChernov37/argnm/main/stable/" + text)
-    open(text, "wb").write(module.content)
-    run("<stdin>", text)
+    try:
+      module = requests.get("https://raw.githubusercontent.com/EgorChernov37/argnm/main/stable/" + text)
+      module.raise_for_status()
+    except requests.exceptions.HTTPError:
+      print("Module not found, please specify correct module name.")
+    except requests.exceptions.ConnectionError:
+      print("You don't have internet connection.")
+    except requests.exceptions.Timeout:
+      print("The connection has timed out.")
+    else:
+      open(text, "wb").write(module.content)
+      run("<stdin>", text)
     return RTResult().success(Number.null)
   execute_install.arg_names = ["value"]
   def execute_capitalize(self, exec_ctx):
@@ -2318,8 +2327,17 @@ def run(fn, text):
   return result.value, result.error
 def install(text):
   import requests
-  module = requests.get("https://raw.githubusercontent.com/EgorChernov37/argnm/main/stable/" + text)
-  global filename
-  filename = input("What you want to be module named (press Enter for same name)? ")
-  if filename.strip() == "": filename = text
-  open(filename, "wb").write(module.content)
+  try:
+    module = requests.get("https://raw.githubusercontent.com/EgorChernov37/argnm/main/stable/" + text)
+    module.raise_for_status()
+  except requests.exceptions.HTTPError:
+    print("Module not found, please specify correct module name.")
+  except requests.exceptions.ConnectionError:
+    print("You don't have internet connection.")
+  except requests.exceptions.Timeout:
+    print("The connection has timed out.")
+  else:
+    global filename
+    filename = input("What you want to be module named (press Enter for same name)? ")
+    if filename.strip() == "": filename = text
+    open(filename, "wb").write(module.content)
